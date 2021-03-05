@@ -25,7 +25,9 @@ class _HomeState extends State<Home> {
 
   bool _visible = true;
 
-  bool inner_visible = true;
+  bool blue_visible = true;
+
+  bool yollow_visible = true;
 
   @override
   Widget build(BuildContext context) {
@@ -44,10 +46,15 @@ class _HomeState extends State<Home> {
 
 
 
-              child: Container(
+              child: Visibility(
 
-                decoration: BoxDecoration(color: Colors.amber),
+                visible: yollow_visible,
 
+                child: Container(
+
+                  decoration: BoxDecoration(color: Colors.amber),
+
+                ),
               ),
             ),
 
@@ -58,7 +65,7 @@ class _HomeState extends State<Home> {
 
               child: Visibility(
 
-                visible: inner_visible,
+                visible: blue_visible,
 
                 child: Align(
 
@@ -133,7 +140,8 @@ class _HomeState extends State<Home> {
                                 onPressed: (){
                                   setState(() {
 
-                                    inner_visible = !inner_visible;
+                                    blue_visible = !blue_visible;
+                                    yollow_visible = !yollow_visible;
 
                                   });
                                 },
@@ -155,7 +163,7 @@ class _HomeState extends State<Home> {
                                 onPressed: (){
                                   setState(() {
 
-                                    inner_visible = !inner_visible;
+                                    blue_visible = !blue_visible;
 
                                   });
                                 },
